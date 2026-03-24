@@ -1226,6 +1226,19 @@ section {
   h2 { font-size: 1.5rem; }
   h3 { font-size: 1.2rem; }
 
+  .typing-text {
+    animation: typing 2.5s steps(30, end) forwards;
+  }
+
+  .particle {
+    width: 4px;
+    height: 4px;
+  }
+
+  .flip-card {
+    height: 250px;
+  }
+
   .logo {
     height: 40px;
   }
@@ -1374,6 +1387,20 @@ section {
     bottom: 16px;
     right: 16px;
   }
+
+  .typing-text {
+    animation: typing 2s steps(25, end) forwards;
+  }
+
+  .particle {
+    width: 3px;
+    height: 3px;
+    opacity: 0.3;
+  }
+
+  .flip-card {
+    height: 200px;
+  }
 }
 
 /* MOBILE PEQUENO (max 480px) */
@@ -1438,6 +1465,20 @@ section {
     font-size: 1.2rem;
     bottom: 14px;
     right: 14px;
+  }
+
+  .typing-text {
+    animation: typing 1.8s steps(20, end) forwards;
+  }
+
+  .particle {
+    width: 3px;
+    height: 3px;
+    opacity: 0.2;
+  }
+
+  .flip-card {
+    height: 180px;
   }
 }
 
@@ -1520,6 +1561,21 @@ section {
 
   .depoimento-texto {
     font-size: 0.8rem;
+  }
+
+  .typing-text {
+    animation: typing 1.5s steps(15, end) forwards;
+  }
+
+  .particle {
+    width: 2px;
+    height: 2px;
+    opacity: 0.15;
+  }
+
+  .flip-card {
+    height: 160px;
+    font-size: 0.85rem;
   }
 
   .whatsapp-button {
