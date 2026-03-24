@@ -265,7 +265,8 @@ section {
 
 .section-header p {
   font-size: 1.1rem;
-  color: var(--cinza);
+  color: var(--cinza-escuro);
+  font-weight: 500;
 }
 
 /* ===== HERO ===== */
@@ -446,8 +447,9 @@ section {
 }
 
 .produto-card p {
-  color: var(--cinza);
+  color: var(--cinza-escuro);
   line-height: 1.6;
+  font-weight: 500;
 }
 
 /* ===== DIFERENCIAIS ===== */
@@ -469,7 +471,8 @@ section {
 }
 
 .diferenciais-section .section-header p {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
 }
 
 .diferenciais-grid {
@@ -505,7 +508,7 @@ section {
 }
 
 .diferencial-item p {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
 }
 
@@ -561,8 +564,9 @@ section {
 }
 
 .depoimento-cargo {
-  color: var(--cinza);
+  color: var(--cinza-escuro);
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 /* ===== GALERIA ===== */
@@ -724,7 +728,8 @@ section {
 }
 
 .info-content p {
-  color: var(--cinza);
+  color: var(--cinza-escuro);
+  font-weight: 500;
 }
 
 .info-content a {
