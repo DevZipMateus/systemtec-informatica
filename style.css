@@ -275,7 +275,7 @@ section {
   padding-bottom: 60px;
   background:
     linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(26, 26, 26, 0.75) 100%),
-    url('images/bg-hero.jpg') center / cover no-repeat;
+    url('images/bg-hero.jpg?v=3') center / cover no-repeat;
   background-attachment: fixed, fixed;
   color: var(--branco);
   min-height: 100vh;
