@@ -173,4 +173,131 @@ if (mensagemInput) {
   });
 }
 
+// ===== CARROSSEL DE GALERIA =====
+class Carrossel {
+  constructor() {
+    this.wrapper = document.getElementById('carrosselWrapper');
+    this.dotsContainer = document.querySelector('.carrossel-dots');
+    this.btnPrev = document.querySelector('.carrossel-prev');
+    this.btnNext = document.querySelector('.carrossel-next');
+
+    if (!this.wrapper || !this.dotsContainer) return;
+
+    // Lista de imagens (midia_1 até midia_47)
+    this.imagens = [];
+    for (let i = 1; i <= 47; i++) {
+      this.imagens.push(`midia_${i}`);
+    }
+
+    this.slideAtual = 0;
+    this.totalSlides = this.imagens.length;
+    this.autoplayInterval = null;
+    this.autoplayDelay = 4000;
+
+    this.init();
+  }
+
+  init() {
+    this.renderSlides();
+    this.renderDots();
+    this.setupEventListeners();
+    this.atualizarSlide(0);
+    this.iniciarAutoplay();
+  }
+
+  renderSlides() {
+    this.imagens.forEach((img, index) => {
+      // Determinar tipo de arquivo
+      const extension = img.toLowerCase().endsWith('.png') ? '.png' :
+                       img.toLowerCase().endsWith('.jpg') ? '.jpg' :
+                       img.toLowerCase().endsWith('.gif') ? '.gif' : '.jpg';
+
+      const slide = document.createElement('div');
+      slide.className = 'carrossel-slide';
+      slide.innerHTML = `<img src="images/${img}${extension}" alt="Systemtec Galeria - ${img}" loading="lazy">`;
+      this.wrapper.appendChild(slide);
+    });
+
+    this.slides = document.querySelectorAll('.carrossel-slide');
+  }
+
+  renderDots() {
+    this.imagens.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = 'carrossel-dot';
+      dot.setAttribute('aria-label', `Ir para slide ${index + 1}`);
+      dot.addEventListener('click', () => {
+        this.pararAutoplay();
+        this.atualizarSlide(index);
+        this.iniciarAutoplay();
+      });
+      this.dotsContainer.appendChild(dot);
+    });
+
+    this.dots = document.querySelectorAll('.carrossel-dot');
+  }
+
+  setupEventListeners() {
+    if (this.btnPrev) {
+      this.btnPrev.addEventListener('click', () => {
+        this.pararAutoplay();
+        this.anterior();
+        this.iniciarAutoplay();
+      });
+    }
+
+    if (this.btnNext) {
+      this.btnNext.addEventListener('click', () => {
+        this.pararAutoplay();
+        this.proximo();
+        this.iniciarAutoplay();
+      });
+    }
+  }
+
+  atualizarSlide(index) {
+    this.slideAtual = (index + this.totalSlides) % this.totalSlides;
+
+    // Remover classe ativo de todos os slides e dots
+    this.slides.forEach(slide => slide.classList.remove('ativo'));
+    this.dots.forEach(dot => dot.classList.remove('ativo'));
+
+    // Adicionar classe ativo ao slide e dot atual
+    this.slides[this.slideAtual].classList.add('ativo');
+    this.dots[this.slideAtual].classList.add('ativo');
+  }
+
+  proximo() {
+    this.atualizarSlide(this.slideAtual + 1);
+  }
+
+  anterior() {
+    this.atualizarSlide(this.slideAtual - 1);
+  }
+
+  iniciarAutoplay() {
+    this.autoplayInterval = setInterval(() => {
+      this.proximo();
+    }, this.autoplayDelay);
+  }
+
+  pararAutoplay() {
+    if (this.autoplayInterval) {
+      clearInterval(this.autoplayInterval);
+      this.autoplayInterval = null;
+    }
+  }
+}
+
+// Inicializar carrossel quando DOM estiver pronto
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    new Carrossel();
+  });
+} else {
+  new Carrossel();
+}
+
+// ===== FIM CARROSSEL =====
+
 console.log('Systemtec Informática — Site carregado com sucesso!');

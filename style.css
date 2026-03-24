@@ -565,6 +565,113 @@ section {
   font-size: 0.9rem;
 }
 
+/* ===== GALERIA ===== */
+.galeria-section {
+  background: var(--cinza-claro);
+}
+
+.carrossel-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carrossel-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--preto);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.carrossel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrossel-slide.ativo {
+  opacity: 1;
+  z-index: 10;
+}
+
+.carrossel-slide img,
+.carrossel-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.carrossel-controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 28px;
+  gap: 16px;
+}
+
+.carrossel-btn {
+  width: 48px;
+  height: 48px;
+  background: var(--verde);
+  color: var(--preto);
+  border: 2px solid var(--verde);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transicao);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.carrossel-btn:hover {
+  background: var(--preto);
+  color: var(--verde);
+  transform: scale(1.1);
+}
+
+.carrossel-btn:active {
+  transform: scale(0.95);
+}
+
+.carrossel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.carrossel-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transicao);
+}
+
+.carrossel-dot.ativo {
+  width: 32px;
+  background: var(--verde);
+  border-radius: 6px;
+}
+
+.carrossel-dot:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 /* ===== CONTATO ===== */
 .contato-section {
   background:
@@ -865,6 +972,25 @@ section {
     padding: 24px;
   }
 
+  .carrossel-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+
+  .carrossel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .carrossel-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .carrossel-dot.ativo {
+    width: 24px;
+  }
+
   .whatsapp-button {
     width: 55px;
     height: 55px;
@@ -1111,6 +1237,24 @@ section {
   }
 }
 
+/* Responsividade Carrossel Mobile */
+@media (max-width: 600px) {
+  .carrossel-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+
+  .carrossel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .carrossel-controles {
+    margin-top: 20px;
+    gap: 12px;
+  }
+}
+
 /* MOBILE 320px */
 @media (max-width: 320px) {
   :root {
@@ -1140,6 +1284,12 @@ section {
     padding: 9px 12px;
     font-size: 0.75rem;
     gap: 4px;
+  }
+
+  .carrossel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
   }
 
   .whatsapp-button {
