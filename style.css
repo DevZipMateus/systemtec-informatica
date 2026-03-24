@@ -110,15 +110,15 @@ img {
 
 .btn-secondary {
   background: transparent;
-  color: var(--preto);
-  border-color: var(--preto);
+  color: var(--verde);
+  border-color: var(--verde);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus {
-  background: var(--preto);
-  color: var(--verde);
-  border-color: var(--preto);
+  background: var(--verde);
+  color: var(--preto);
+  border-color: var(--verde);
   transform: translateY(-2px);
 }
 
@@ -470,6 +470,10 @@ section {
   pointer-events: none;
 }
 
+.diferenciais-section .section-header h2 {
+  color: var(--branco);
+}
+
 .diferenciais-section .section-header p {
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
@@ -571,7 +575,10 @@ section {
 
 /* ===== GALERIA ===== */
 .galeria-section {
-  background: var(--cinza-claro);
+  background:
+    linear-gradient(135deg, rgba(245, 245, 245, 0.96) 0%, rgba(255, 255, 255, 0.96) 100%),
+    url('images/bg-galeria.jpg') center / cover no-repeat;
+  background-attachment: scroll, fixed;
 }
 
 .carrossel-container {
