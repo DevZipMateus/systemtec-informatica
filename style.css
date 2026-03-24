@@ -534,10 +534,10 @@ section {
 
 .product-icon {
   font-size: 3.5rem;
-  color: var(--verde);
+  color: var(--preto);
   margin-bottom: 20px;
   animation: float 3s ease-in-out infinite;
-  text-shadow: 0 0 12px rgba(169, 255, 58, 0.4);
+  text-shadow: none;
 }
 
 .produto-card h3 {
