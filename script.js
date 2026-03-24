@@ -207,14 +207,24 @@ class Carrossel {
 
   renderSlides() {
     this.imagens.forEach((img, index) => {
-      // Determinar tipo de arquivo
-      const extension = img.toLowerCase().endsWith('.png') ? '.png' :
-                       img.toLowerCase().endsWith('.jpg') ? '.jpg' :
-                       img.toLowerCase().endsWith('.gif') ? '.gif' : '.jpg';
-
       const slide = document.createElement('div');
       slide.className = 'carrossel-slide';
-      slide.innerHTML = `<img src="images/${img}${extension}" alt="Systemtec Galeria - ${img}" loading="lazy">`;
+
+      const imgElement = document.createElement('img');
+      imgElement.alt = `Systemtec Galeria - ${img}`;
+      imgElement.loading = 'lazy';
+
+      // Tentar jpg primeiro, depois png, depois gif
+      imgElement.src = `images/${img}.jpg`;
+      imgElement.onerror = function() {
+        if (this.src.endsWith('.jpg')) {
+          this.src = `images/${img}.png`;
+        } else if (this.src.endsWith('.png')) {
+          this.src = `images/${img}.gif`;
+        }
+      };
+
+      slide.appendChild(imgElement);
       this.wrapper.appendChild(slide);
     });
 
