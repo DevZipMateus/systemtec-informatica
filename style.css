@@ -191,12 +191,7 @@ h1 { font-size: 3.5rem; }
 
 h2 {
   font-size: 2.5rem;
-  background: linear-gradient(135deg, var(--preto) 0%, var(--verde) 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 3s ease infinite;
+  color: var(--preto);
 }
 
 h3 { font-size: 1.5rem; }
@@ -505,10 +500,11 @@ section {
 }
 
 .hero h2 {
-  color: var(--branco);
+  color: var(--verde);
   font-size: 1.8rem;
   margin-bottom: 20px;
   font-weight: 400;
+  text-shadow: 0 0 10px rgba(169, 255, 58, 0.5);
 }
 
 .hero-description {
