@@ -310,4 +310,66 @@ if (document.readyState === 'loading') {
 
 // ===== FIM CARROSSEL =====
 
+// ===== TYPING EFFECT NO HERO =====
+function initTypingEffect() {
+  const h2 = document.querySelector('.hero h2');
+  if (h2) {
+    const text = h2.textContent;
+    h2.textContent = '';
+    h2.classList.add('typing-text');
+
+    let index = 0;
+    const speed = 80; // ms por caractere
+
+    function type() {
+      if (index < text.length) {
+        h2.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, speed);
+      }
+    }
+
+    type();
+  }
+}
+
+// ===== FLOATING PARTICLES =====
+function createParticles() {
+  const particleCount = 15;
+  const container = document.querySelector('.hero');
+
+  if (container) {
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+
+      // Posição aleatória
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+
+      // Duração aleatória
+      particle.style.animationDelay = Math.random() * 2 + 's';
+      particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+
+      container.appendChild(particle);
+    }
+  }
+}
+
+// ===== CARD FLIP =====
+function initCardFlip() {
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', function() {
+      this.classList.toggle('flipped');
+    });
+  });
+}
+
+// ===== INICIALIZAR EFEITOS =====
+document.addEventListener('DOMContentLoaded', () => {
+  initTypingEffect();
+  createParticles();
+  initCardFlip();
+});
+
 console.log('Systemtec Informática — Site carregado com sucesso!');
