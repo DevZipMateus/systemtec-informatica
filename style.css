@@ -20,6 +20,76 @@
   --header-height: 70px;
 }
 
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(169, 255, 58, 0.3), 0 0 20px rgba(169, 255, 58, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(169, 255, 58, 0.5), 0 0 30px rgba(169, 255, 58, 0.25);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 /* ===== RESET ===== */
 * {
   margin: 0;
@@ -105,7 +175,8 @@ img {
   background: var(--preto);
   color: var(--verde);
   border-color: var(--preto);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(169, 255, 58, 0.4), 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
@@ -119,7 +190,8 @@ img {
   background: var(--verde);
   color: var(--preto);
   border-color: var(--verde);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(169, 255, 58, 0.4), 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== HEADER FIXO ===== */
@@ -154,6 +226,12 @@ header {
 .logo {
   height: 50px;
   width: auto;
+  transition: transform var(--transicao), filter var(--transicao);
+}
+
+.logo-link:hover .logo {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(169, 255, 58, 0.4));
 }
 
 .desktop-nav ul {
@@ -351,17 +429,20 @@ section {
   border-radius: var(--radius);
   text-align: center;
   transition: transform var(--transicao), box-shadow var(--transicao);
+  animation: slideInUp 0.6s ease-out;
 }
 
 .sobre-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-12px);
+  box-shadow: 0 0 15px rgba(169, 255, 58, 0.2), 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .card-icon {
   font-size: 3rem;
   color: var(--verde);
   margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(169, 255, 58, 0.3);
 }
 
 .sobre-card h3 {
@@ -427,18 +508,22 @@ section {
   text-align: center;
   transition: all var(--transicao);
   cursor: pointer;
+  animation: slideInUp 0.6s ease-out;
 }
 
 .produto-card:hover {
   border-color: var(--verde);
-  background: linear-gradient(135deg, rgba(169, 255, 58, 0.2) 0%, rgba(169, 255, 58, 0.1) 100%);
-  transform: translateY(-6px);
+  background: linear-gradient(135deg, rgba(169, 255, 58, 0.3) 0%, rgba(169, 255, 58, 0.2) 100%);
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(169, 255, 58, 0.3), 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 .product-icon {
   font-size: 3.5rem;
   color: var(--verde);
   margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+  text-shadow: 0 0 12px rgba(169, 255, 58, 0.4);
 }
 
 .produto-card h3 {
@@ -536,11 +621,12 @@ section {
   border-radius: var(--radius);
   transition: all var(--transicao);
   border-top: 4px solid var(--verde);
+  animation: slideInUp 0.6s ease-out;
 }
 
 .depoimento-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 0 12px rgba(169, 255, 58, 0.2), 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 .stars {
