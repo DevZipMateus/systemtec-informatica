@@ -478,7 +478,7 @@ section {
   padding-bottom: 60px;
   background:
     linear-gradient(135deg, rgba(0, 0, 0, 0.675) 0%, rgba(26, 26, 26, 0.675) 100%),
-    url('images/pc-empresa.jpg') center / cover no-repeat;
+    url('img/pc-empresa.jpg') center / cover no-repeat;
   background-attachment: fixed, fixed;
   color: var(--branco);
   min-height: 100vh;
@@ -578,7 +578,7 @@ section {
 .sobre-section {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.68) 0%, rgba(245, 245, 245, 0.68) 100%),
-    url('images/bg-sobre.jpg') center / cover no-repeat;
+    url('img/bg-sobre.jpg') center / cover no-repeat;
   background-attachment: scroll, fixed;
 }
 
@@ -656,7 +656,7 @@ section {
 .produtos-section {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.71) 0%, rgba(245, 245, 245, 0.71) 100%),
-    url('images/bg-produtos.jpg') center / cover no-repeat;
+    url('img/bg-produtos.jpg') center / cover no-repeat;
   background-attachment: scroll, fixed;
 }
 
@@ -707,7 +707,7 @@ section {
 .diferenciais-section {
   background:
     linear-gradient(135deg, rgba(0, 0, 0, 0.72) 0%, rgba(26, 26, 26, 0.72) 100%),
-    url('images/bg-diferenciais.jpg') center / cover no-repeat;
+    url('img/bg-diferenciais.jpg') center / cover no-repeat;
   background-attachment: scroll, fixed;
   color: var(--branco);
   position: relative;
@@ -778,7 +778,7 @@ section {
 .depoimentos-section {
   background:
     linear-gradient(135deg, rgba(245, 245, 245, 0.70) 0%, rgba(255, 255, 255, 0.70) 100%),
-    url('images/bg-depoimentos.jpg') center / cover no-repeat;
+    url('img/bg-depoimentos.jpg') center / cover no-repeat;
   background-attachment: scroll, fixed;
 }
 
@@ -836,7 +836,7 @@ section {
 .galeria-section {
   background:
     linear-gradient(135deg, rgba(245, 245, 245, 0.70) 0%, rgba(255, 255, 255, 0.70) 100%),
-    url('images/bg-galeria.jpg') center / cover no-repeat;
+    url('img/bg-galeria.jpg') center / cover no-repeat;
   background-attachment: scroll, fixed;
 }
 
@@ -946,7 +946,7 @@ section {
 .contato-section {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.70) 0%, rgba(245, 245, 245, 0.70) 100%),
-    url('images/bg-contato.jpg') center / cover no-repeat;
+    url('img/bg-contato.jpg') center / cover no-repeat;
   background-attachment: scroll, fixed;
 }
 

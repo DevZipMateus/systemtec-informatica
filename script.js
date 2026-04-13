@@ -221,7 +221,7 @@ class Carrossel {
       imgElement.alt = `Systemtecshop Galeria - ${img}`;
       imgElement.loading = 'lazy';
 
-      imgElement.src = `images/${img}`;
+      imgElement.src = `img/${img}`;
 
       slide.appendChild(imgElement);
       this.wrapper.appendChild(slide);
