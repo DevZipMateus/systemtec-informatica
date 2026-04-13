@@ -183,17 +183,15 @@ class Carrossel {
 
     if (!this.wrapper || !this.dotsContainer) return;
 
-    // Lista das imagens existentes na pasta
+    // Lista das imagens existentes na pasta img/
     this.imagens = [
-      'midia_1.jpg', 'midia_2.jpg',
-      'midia_12.png', 'midia_19.png', 'midia_20.png',
+      'midia_1.jpg', 'midia_19.png',
       'midia_21.jpg', 'midia_22.png', 'midia_23.jpg', 'midia_24.png',
       'midia_25.jpg', 'midia_26.jpg', 'midia_27.png', 'midia_28.png',
       'midia_29.png', 'midia_30.png', 'midia_31.png', 'midia_32.png',
-      'midia_33.png', 'midia_34.png', 'midia_35.png', 'midia_36.jpg',
-      'midia_37.png', 'midia_38.png', 'midia_39.png', 'midia_40.jpg',
-      'midia_41.png', 'midia_42.jpg', 'midia_43.png', 'midia_44.jpg',
-      'midia_45.jpg', 'midia_46.png', 'midia_47.png'
+      'midia_35.png', 'midia_36.jpg', 'midia_40.jpg', 'midia_41.png',
+      'midia_42.jpg', 'midia_43.png', 'midia_44.jpg', 'midia_45.jpg',
+      'midia_46.png', 'midia_47.png'
     ];
 
     this.slideAtual = 0;

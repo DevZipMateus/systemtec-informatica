@@ -1141,13 +1141,20 @@ section {
   }
 
   /* Desabilitar parallax em backgrounds para melhor performance */
-  .hero,
   .sobre-section,
   .produtos-section,
   .diferenciais-section,
   .depoimentos-section,
   .contato-section {
     background-attachment: scroll, scroll;
+  }
+
+  /* Hero: re-declaração completa para iOS Safari (ignora só o attachment override) */
+  .hero {
+    background:
+      linear-gradient(135deg, rgba(0, 0, 0, 0.675) 0%, rgba(26, 26, 26, 0.675) 100%),
+      url('img/pc-empresa.jpg') center / cover no-repeat;
+    background-attachment: scroll;
   }
 }
 
