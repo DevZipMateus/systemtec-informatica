@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Vitrine Systemtecshop — confira nosso catálogo completo de produtos online.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css?v=2">
+
+  <style>
+    /* ===== HEADER 80px NA VITRINE ===== */
+    :root {
+      --header-height: 80px;
+    }
+
+    header {
+      height: 80px;
+    }
+
+    /* ===== VITRINE PAGE — LAYOUT FIXO SEM SCROLL ===== */
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+      -webkit-overflow-scrolling: auto;
+      touch-action: none;
+    }
+
+    /* Suporte a dvh (dynamic viewport height) — melhor para iOS Safari */
+    @supports (height: 100dvh) {
+      html, body {
+        height: 100dvh;
+      }
+    }
+
+    /* ===== IFRAME ===== */
+    .vitrine-iframe {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 80px - 63px);
+      border: none;
+      display: block;
+      z-index: 1;
+    }
+
+    @supports (height: 100dvh) {
+      .vitrine-iframe {
+        height: calc(100dvh - 80px - 63px);
+      }
+    }
+
+    /* Safe area para iPhone com notch/Dynamic Island */
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+      .vitrine-iframe {
+        height: calc(100vh - 80px - 63px - env(safe-area-inset-bottom));
+      }
+
+      @supports (height: 100dvh) {
+        .vitrine-iframe {
+          height: calc(100dvh - 80px - 63px - env(safe-area-inset-bottom));
+        }
+      }
+
+      .vitrine-badge-wrap {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+    }
+
+    /* ===== BADGE INFERIOR FIXO ===== */
+    .vitrine-badge-wrap {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--preto);
+    }
+
+    /* ===== NAV ACTIVE ===== */
+    .desktop-nav a.vitrine-ativa {
+      color: var(--verde);
+      font-weight: 700;
+    }
+
+    .mobile-nav a.vitrine-ativa {
+      color: var(--verde);
+      font-weight: 700;
+    }
+
+    /* Garantir que mobile-nav fique acima do iframe */
+    .mobile-nav {
+      z-index: 500;
+    }
+
+    /* Scroll interno no iframe habilitado via pointer-events */
+    .vitrine-iframe {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* ===== BOTÃO VOLTAR ===== */
+    .btn-voltar-vitrine {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: transparent;
+      border: 2px solid var(--verde);
+      color: var(--verde);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all var(--transicao);
+      white-space: nowrap;
+    }
+    .btn-voltar-vitrine:hover {
+      background: var(--verde);
+      color: var(--preto);
+    }
+
+    @media (max-width: 600px) {
+      .btn-voltar-vitrine span { display: none; }
+      .btn-voltar-vitrine {
+        padding: 7px 10px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+  <title>Vitrine — Systemtecshop</title>
+</head>
+<body>
+
+  <!-- ===== HEADER FIXO ===== -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link" aria-label="Systemtecshop">
+        <img src="images/logo.png" alt="Logo Systemtecshop" class="logo">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="vitrine.html" class="vitrine-ativa">Vitrine</a></li>
+          <li><a href="index.html#diferenciais">Diferenciais</a></li>
+          <li><a href="index.html#depoimentos">Depoimentos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a href="index.html" class="btn-voltar-vitrine" aria-label="Voltar ao site">
+        <i class="fas fa-arrow-left"></i> Voltar
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu Mobile -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile" aria-hidden="true">
+    <ul>
+      <li><a href="index.html#inicio" class="nav-link">Início</a></li>
+      <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+      <li><a href="index.html#produtos" class="nav-link">Produtos</a></li>
+      <li><a href="vitrine.html" class="nav-link vitrine-ativa">Vitrine</a></li>
+      <li><a href="index.html#diferenciais" class="nav-link">Diferenciais</a></li>
+      <li><a href="index.html#depoimentos" class="nav-link">Depoimentos</a></li>
+      <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== IFRAME DA VITRINE ===== -->
+  <iframe
+    id="vitrineFrame"
+    src="https://systemtecinformatica.egestor.com.br/vitrine/"
+    class="vitrine-iframe"
+    title="Vitrine Systemtecshop"
+    allow="payment"
+    allowfullscreen>
+  </iframe>
+
+  <!-- ===== BADGE INFERIOR ===== -->
+  <div class="vitrine-badge-wrap">
+    <div id="montesite-footer-badge"></div>
+  </div>
+  <script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
+
+  <script>
+    // ===== MENU HAMBURGER =====
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+        mobileNav.setAttribute('aria-hidden', !mobileNav.classList.contains('active'));
+      });
+
+      document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          mobileNav.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+          mobileNav.setAttribute('aria-hidden', 'true');
+        });
+      });
+    }
+
+    // ===== SCROLL DO HEADER =====
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+      } else {
+        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+      }
+    });
+
+    // ===== AJUSTE DINÂMICO DO IFRAME (iPhone + resize) =====
+    function adjustIframe() {
+      const iframe = document.getElementById('vitrineFrame');
+      const badgeWrap = document.querySelector('.vitrine-badge-wrap');
+      if (!iframe) return;
+
+      const headerH = 80;
+      const badgeH = badgeWrap ? badgeWrap.offsetHeight : 63;
+      const availableH = window.innerHeight - headerH - badgeH;
+
+      iframe.style.height = Math.max(availableH, 200) + 'px';
+    }
+
+    // Executar imediatamente e em eventos de redimensionamento
+    adjustIframe();
+    window.addEventListener('resize', adjustIframe);
+    window.addEventListener('orientationchange', () => {
+      // Aguarda o iOS atualizar window.innerHeight após rotação
+      setTimeout(adjustIframe, 300);
+    });
+
+    // Reajustar após badge carregar (pode alterar altura)
+    setTimeout(adjustIframe, 1000);
+    setTimeout(adjustIframe, 2500);
+  </script>
+</body>
+</html>
