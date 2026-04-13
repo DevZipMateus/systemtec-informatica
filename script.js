@@ -1,5 +1,5 @@
 // ========================================
-// SYSTEMTEC INFORMÁTICA — JavaScript
+// SYSTEMTECSHOP — JavaScript
 // ========================================
 
 // ===== MENU MOBILE =====
@@ -183,11 +183,18 @@ class Carrossel {
 
     if (!this.wrapper || !this.dotsContainer) return;
 
-    // Lista de imagens (midia_1 até midia_47)
-    this.imagens = [];
-    for (let i = 1; i <= 47; i++) {
-      this.imagens.push(`midia_${i}`);
-    }
+    // Lista das imagens existentes na pasta
+    this.imagens = [
+      'midia_1.jpg', 'midia_2.jpg',
+      'midia_12.png', 'midia_19.png', 'midia_20.png',
+      'midia_21.jpg', 'midia_22.png', 'midia_23.jpg', 'midia_24.png',
+      'midia_25.jpg', 'midia_26.jpg', 'midia_27.png', 'midia_28.png',
+      'midia_29.png', 'midia_30.png', 'midia_31.png', 'midia_32.png',
+      'midia_33.png', 'midia_34.png', 'midia_35.png', 'midia_36.jpg',
+      'midia_37.png', 'midia_38.png', 'midia_39.png', 'midia_40.jpg',
+      'midia_41.png', 'midia_42.jpg', 'midia_43.png', 'midia_44.jpg',
+      'midia_45.jpg', 'midia_46.png', 'midia_47.png'
+    ];
 
     this.slideAtual = 0;
     this.totalSlides = this.imagens.length;
@@ -211,18 +218,10 @@ class Carrossel {
       slide.className = 'carrossel-slide';
 
       const imgElement = document.createElement('img');
-      imgElement.alt = `Systemtec Galeria - ${img}`;
+      imgElement.alt = `Systemtecshop Galeria - ${img}`;
       imgElement.loading = 'lazy';
 
-      // Tentar jpg primeiro, depois png, depois gif
-      imgElement.src = `images/${img}.jpg`;
-      imgElement.onerror = function() {
-        if (this.src.endsWith('.jpg')) {
-          this.src = `images/${img}.png`;
-        } else if (this.src.endsWith('.png')) {
-          this.src = `images/${img}.gif`;
-        }
-      };
+      imgElement.src = `images/${img}`;
 
       slide.appendChild(imgElement);
       this.wrapper.appendChild(slide);
@@ -372,4 +371,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initCardFlip();
 });
 
-console.log('Systemtec Informática — Site carregado com sucesso!');
+console.log('Systemtecshop — Site carregado com sucesso!');

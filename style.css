@@ -478,7 +478,7 @@ section {
   padding-bottom: 60px;
   background:
     linear-gradient(135deg, rgba(0, 0, 0, 0.675) 0%, rgba(26, 26, 26, 0.675) 100%),
-    url('images/pc-gamer.jpg') center / cover no-repeat;
+    url('images/pc-empresa.jpg') center / cover no-repeat;
   background-attachment: fixed, fixed;
   color: var(--branco);
   min-height: 100vh;
