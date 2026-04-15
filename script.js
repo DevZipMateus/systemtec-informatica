@@ -362,8 +362,23 @@ function initCardFlip() {
   });
 }
 
+// ===== HERO BACKGROUND CAROUSEL =====
+function initHeroCarousel() {
+  const slides = document.querySelectorAll('.hero-bg-slide');
+  if (!slides.length) return;
+
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 3000);
+}
+
 // ===== INICIALIZAR EFEITOS =====
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroCarousel();
   initTypingEffect();
   createParticles();
   initCardFlip();
