@@ -1,0 +1,20 @@
+# ===== CONTROLE DE CACHE =====
+
+# HTML: sem cache (sempre busca versão nova)
+<FilesMatch "\.(html|htm)$">
+    FileETag None
+    Header unset ETag
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</FilesMatch>
+
+# CSS e JS: cache de 1 ano (renovado pelo ?v= no nome)
+<FilesMatch "\.(css|js)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+</FilesMatch>
+
+# Imagens: cache de 30 dias
+<FilesMatch "\.(png|jpg|jpeg|gif|svg|webp|ico)$">
+    Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
