@@ -169,8 +169,9 @@ O site suporta 6 imagens de background com efeito parallax em desktop:
 
 - 📸 [Instagram](https://www.instagram.com/systemtec_shop/)
 - 📌 [Pinterest](https://br.pinterest.com/systemtecshop/)
-- 𝕏 [X (Twitter)](https://x.com/systemtecshop)
-- ▶️ [YouTube](https://www.youtube.com/@systemtecshop)
+- 👍 [Facebook](https://www.facebook.com/profile.php?id=61591295581770)
+- 💼 [LinkedIn](https://www.linkedin.com/in/systemtecshop/?skipRedirect=true)
+- 📍 [Google Meu Negócio](https://share.google/enTI9pW12S0B6piRN)
 
 ## 💻 Tecnologias
 
