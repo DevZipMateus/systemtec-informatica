@@ -299,9 +299,10 @@ header {
 }
 
 .desktop-nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .desktop-nav ul {
@@ -1782,17 +1783,31 @@ section {
   100% { background-position: 0% 50%; }
 }
 .nav-gamer-btn {
-  background: linear-gradient(90deg, #ff003c, #ff9900, #f9f002, #2bff6a, #00e5ff, #7a5cff, #ff2ec2, #ff003c) !important;
+  background: transparent !important;
+  background-image: linear-gradient(90deg, #ff003c, #ff9900, #f9f002, #2bff6a, #00e5ff, #7a5cff, #ff2ec2, #ff003c) !important;
   background-size: 300% auto !important;
-  color: #050506 !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
   animation: navGamerRgb 5s linear infinite;
   white-space: nowrap !important;
+  box-shadow: none !important;
 }
 .nav-gamer-btn:hover {
-  color: #050506 !important;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.35) !important;
+  box-shadow: none !important;
+  filter: brightness(1.2);
 }
-.mobile-nav .nav-gamer-btn { color: #050506 !important; }
+.mobile-nav .nav-gamer-btn {
+  background: transparent !important;
+  background-image: linear-gradient(90deg, #ff003c, #ff9900, #f9f002, #2bff6a, #00e5ff, #7a5cff, #ff2ec2, #ff003c) !important;
+  background-size: 300% auto !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  text-align: center;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .nav-gamer-btn { animation: none !important; }
