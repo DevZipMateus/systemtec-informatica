@@ -1185,6 +1185,12 @@ section {
   }
 }
 
+/* Menu com item Gamer Zone fica apertado entre o breakpoint tablet e o desktop cheio */
+@media (max-width: 1220px) {
+  .desktop-nav { display: none; }
+  .hamburger { display: flex; }
+}
+
 /* TABLET PORTRAIT (max 1023px) */
 @media (max-width: 1023px) {
   :root {
@@ -1767,6 +1773,29 @@ section {
   border-radius: var(--radius);
   font-weight: 700;
   text-align: center;
+}
+
+/* --- Botão Gamer Zone no Nav (RGB) --- */
+@keyframes navGamerRgb {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.nav-gamer-btn {
+  background: linear-gradient(90deg, #ff003c, #ff9900, #f9f002, #2bff6a, #00e5ff, #7a5cff, #ff2ec2, #ff003c) !important;
+  background-size: 300% auto !important;
+  color: #050506 !important;
+  animation: navGamerRgb 5s linear infinite;
+  white-space: nowrap !important;
+}
+.nav-gamer-btn:hover {
+  color: #050506 !important;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.35) !important;
+}
+.mobile-nav .nav-gamer-btn { color: #050506 !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-gamer-btn { animation: none !important; }
 }
 
 /* --- Botão Vitrine no Hero --- */
