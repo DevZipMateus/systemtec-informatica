@@ -3,7 +3,7 @@
 // ========================================
 
 (function () {
-  const TOTAL_IMAGENS = 21;
+  const TOTAL_IMAGENS = 34;
   const imagens = Array.from({ length: TOTAL_IMAGENS }, (_, i) => {
     const n = String(i + 1).padStart(2, '0');
     return `img/gamer/gamer-${n}.jpg`;
