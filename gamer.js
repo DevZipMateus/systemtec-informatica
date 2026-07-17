@@ -76,22 +76,52 @@
     track.scrollTo({ left: track.clientWidth * i, behavior: 'smooth' });
   }
 
+  function goToDelta(delta) {
+    const current = Math.round(track.scrollLeft / track.clientWidth);
+    const next = (current + delta + imagens.length) % imagens.length;
+    scrollToSlide(next);
+  }
+
   track.addEventListener('scroll', () => {
     clearTimeout(track._scrollTimer);
     track._scrollTimer = setTimeout(updateActiveDot, 80);
   });
 
-  if (btnPrev) btnPrev.addEventListener('click', () => {
-    const current = Math.round(track.scrollLeft / track.clientWidth);
-    scrollToSlide(Math.max(0, current - 1));
-  });
-  if (btnNext) btnNext.addEventListener('click', () => {
-    const current = Math.round(track.scrollLeft / track.clientWidth);
-    scrollToSlide(Math.min(imagens.length - 1, current + 1));
+  if (btnPrev) btnPrev.addEventListener('click', () => { goToDelta(-1); restartAutoplay(); });
+  if (btnNext) btnNext.addEventListener('click', () => { goToDelta(1); restartAutoplay(); });
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => restartAutoplay());
   });
 
   window.addEventListener('resize', updateActiveDot);
   updateActiveDot();
+
+  // ===== AUTOPLAY (troca a cada 3 segundos) =====
+  const AUTOPLAY_DELAY = 3000;
+  let autoplayTimer = null;
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(() => goToDelta(1), AUTOPLAY_DELAY);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+
+  function restartAutoplay() {
+    startAutoplay();
+  }
+
+  const carrosselWrap = document.querySelector('.gz-carrossel');
+  if (carrosselWrap) {
+    carrosselWrap.addEventListener('mouseenter', stopAutoplay);
+    carrosselWrap.addEventListener('mouseleave', startAutoplay);
+    carrosselWrap.addEventListener('touchstart', stopAutoplay, { passive: true });
+  }
+
+  startAutoplay();
 
   // ===== LIGHTBOX =====
   const lightbox = document.getElementById('gzLightbox');
