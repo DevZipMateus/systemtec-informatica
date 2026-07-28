@@ -1813,7 +1813,7 @@ section {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s ease;
-  z-index: 0;
+  z-index: -1;
 }
 
 .btn-vitrine:hover::before {
